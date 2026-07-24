@@ -6,5 +6,6 @@ subtract=sub(2,4)
 
 print(subtract)
 
-
 print(result)
+
+print(__name__)
