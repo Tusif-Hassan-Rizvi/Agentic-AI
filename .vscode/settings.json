@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./python-learning/a_basic_python/calculator-package"
+    ]
+}
