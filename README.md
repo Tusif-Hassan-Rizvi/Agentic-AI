@@ -90,3 +90,10 @@ This plan is customized to help you transition from **Frontend Developer** to a 
   - [ ] Design visual "thinking nodes" that show what the backend LangGraph agent is currently doing.
 - [ ] **Fifth Milestone Project (Portfolio Showstopper)**
   - [ ] Build a full-stack **AI-powered Workspace Application** using Next.js (frontend) and your FastAPI/LangGraph backend, complete with real-time streaming, trace logs, and human approval modals.
+
+
+  ## About Agentic Frontend 
+
+  ```bash
+  https://www.mindset.ai/blogs/the-agentic-frontend-what-it-is-and-why-every-product-needs-one
+  ```
