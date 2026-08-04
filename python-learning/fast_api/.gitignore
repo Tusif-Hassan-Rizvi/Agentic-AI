@@ -1,0 +1,63 @@
+# Virtual environments
+myenv/
+venv/
+env/
+.venv/
+ENV/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# IDE / editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Type checker / linter cache
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+
+# Django (uncomment if used)
+# *.sqlite3
+# media/
+
+# Flask instance folder (uncomment if used)
+# instance/
