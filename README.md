@@ -97,3 +97,7 @@ This plan is customized to help you transition from **Frontend Developer** to a 
   ```bash
   https://www.mindset.ai/blogs/the-agentic-frontend-what-it-is-and-why-every-product-needs-one
   ```
+
+  ```bash
+  mindset.ai/blogs/what-is-agentic-ai
+  ```
