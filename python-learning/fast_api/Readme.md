@@ -28,3 +28,9 @@ pip install fastapi uvicorn
 ```bash
 uvicorn main:app --reload
 ```
+
+
+6. To check API Better way 
+```bash
+http://127.0.0.1:8000/docs
+```
