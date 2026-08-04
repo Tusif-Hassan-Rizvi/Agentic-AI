@@ -34,3 +34,10 @@ uvicorn main:app --reload
 ```bash
 http://127.0.0.1:8000/docs
 ```
+
+
+7. To dowload alchemy and psycopg2
+
+```bash
+pip install sqlalchemy psycopg2 
+```
