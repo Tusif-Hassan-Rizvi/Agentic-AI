@@ -23,3 +23,19 @@ products = [
 @app.get("/products")
 def get_all_product():     
     return products
+
+
+@app.get("/product/{id}")
+def get_product_by_id(id:int):
+    for product in products:
+        if product.id==id:
+            return product
+    return "Product not found"
+
+
+
+@app.post("/product")
+def add_product(product:Product):
+    products.append(product)
+    return product
+    
