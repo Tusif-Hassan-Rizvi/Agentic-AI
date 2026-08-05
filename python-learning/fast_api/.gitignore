@@ -61,3 +61,7 @@ dmypy.json
 
 # Flask instance folder (uncomment if used)
 # instance/
+
+
+# extra
+database_url.py
