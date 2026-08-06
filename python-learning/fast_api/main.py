@@ -73,30 +73,38 @@ def get_product_by_id(id:int, db:Session=Depends(get_db)):
 
 # post api 
 @app.post("/product")
-def add_product(product:Product):
-    products.append(product)
+def add_product(product:Product, db:Session=Depends(get_db)):
+    db.add(database_models.Product(**product.model_dump()))
+    db.commit()
     return product
     
     
     
 # update api    
 @app.put("/product") 
-def update_product(id:int, product:Product):
-    for i in range(len(products)):
-        if products[i].id==id:
-            products[i]==product
-            return {"message": "Product updated successfully", "data": products[i]}
+def update_product(id:int, product:Product, db:Session=Depends(get_db)):
+    db_product=db.query(database_models.Product).filter(database_models.Product.id==id).first()
           
-    return "No product found"        
+    if db_product:   
+        db_product.name= product.name
+        db_product.description=product.description
+        db_product.price=product.price
+        db_product.quantity=product.quantity
+        db.commit()
+        return {"message":"Product Updated"}
+    else:
+        return "No product found"        
 
 
 
 # delete api 
 @app.delete("/product")
-def delete_product(id: int):
-    for i in range(len(products)):
-        if products[i].id == id:
-            del products[i] 
-            return {"message": "Product deleted successfully", "data": products}
-            
-    return {"message": "No product found"}    
+def delete_product(id: int, db:Session=Depends(get_db)):
+   db_product=db.query(database_models.Product).filter(database_models.Product.id==id).first()
+   
+   if db_product:
+       db.delete(db_product)
+       db.commit() 
+       
+   else:         
+       return {"message": "No product found"}    
