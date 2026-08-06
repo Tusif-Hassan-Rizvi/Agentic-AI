@@ -1,5 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from models import Product
+from sqlalchemy.orm import Session
 
 from database import session, engine
 import database_models
@@ -20,13 +21,25 @@ products = [
     Product(id=3, name="Wireless Headphones", description="Noise-cancelling over-ear headphones", price=4500.0, quantity=15),
     Product(id=4, name="Smart Watch", description="Fitness tracker with AMOLED display", price=2999.0, quantity=8),
     Product(id=5, name="Mechanical Keyboard", description="RGB backlit mechanical keyboard", price=3500.0, quantity=5),
+    Product(id=6, name="Mouse", description="Wired mouse for daily use", price=500.0, quantity=50),
 ]
+
+
+def get_db():
+    db=session()
+    try:
+        yield db
+        
+    finally:    
+        db.close()
+
 
 
 def init_db():
     db=session()
     
     count=db.query(database_models.Product).count()
+    print("this is count: ", count)
      
     if count==0: 
         for product in products:
@@ -41,17 +54,20 @@ init_db()
 
 # get api 
 @app.get("/products")
-def get_all_product(): 
-    # db=session()
-    # db.query() 
-    return products
+def get_all_product(db:Session=Depends(get_db)): 
+    
+    db_products=db.query(database_models.Product).all()
+    return db_products
 
 
 @app.get("/product/{id}")
-def get_product_by_id(id:int):
-    for product in products:
-        if product.id==id:
-            return product
+def get_product_by_id(id:int, db:Session=Depends(get_db)):
+
+    db_product=db.query(database_models.Product).filter(database_models.Product.id==id).first()
+    
+    if db_product:
+        return db_product
+    
     return "Product not found"
 
 
