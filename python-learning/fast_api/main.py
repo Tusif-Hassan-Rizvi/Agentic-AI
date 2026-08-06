@@ -23,12 +23,27 @@ products = [
 ]
 
 
+def init_db():
+    db=session()
+    
+    count=db.query(database_models.Product).count()
+     
+    if count==0: 
+        for product in products:
+            db.add(database_models.Product(**product.model_dump()))
+        
+        db.commit()    
+
+
+init_db()
+
+
 
 # get api 
 @app.get("/products")
 def get_all_product(): 
-    db=session()
-    db.query() 
+    # db=session()
+    # db.query() 
     return products
 
 
