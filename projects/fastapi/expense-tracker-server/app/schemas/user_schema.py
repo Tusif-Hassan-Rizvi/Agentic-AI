@@ -1,20 +1,26 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, ConfigDict, EmailStr
+from pydantic import BaseModel, ConfigDict
 
 
-
-# 1. Registration Schema (Data sent by client during sign up)
+# 1. User Registration Schema
 class UserCreate(BaseModel):
     username: str
     password: str
-    email: Optional[EmailStr] = None
+    email: Optional[str] = None
     mobile_number: Optional[str] = None
 
 
-# 2. User Response Schema (Data returned by API - NO PASSWORD!)
+# 2. User Login Schema (Accepts JSON body: {"username": "...", "password": "..."})
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+
+# 3. User Response Schema (Returns safe user info - NO PASSWORD)
 class UserResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
+
     id: int
     username: str
     email: Optional[str] = None
@@ -23,14 +29,12 @@ class UserResponse(BaseModel):
     created_at: datetime
 
 
-
-# 3. Token Response Schema (Returned after successful login)
+# 4. Token Response Schema
 class Token(BaseModel):
     access_token: str
     token_type: str = "bearer"
 
 
-# 4. Token Data Schema (Decoded data stored inside JWT)
+# 5. Token Data Schema
 class TokenData(BaseModel):
-    username: Optional[str] = None    
-
+    username: Optional[str] = None
