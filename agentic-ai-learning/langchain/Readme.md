@@ -27,9 +27,19 @@ uv venv
 
 
 
-5. create package with virtual env
+5. create package with virtual env and requirement.txt file
 
 ```bash
 uv add -r requirement.txt
 ```
+
+
+6. create a package for jupeter notebok
+
+```bash
+uv add ipykernel
+```
+
+
+
 
