@@ -10,7 +10,7 @@ This plan is customized to help you transition from **Frontend Developer** to a 
 - [ ] **Core Python & OOP Fundamentals**
   - [ ] Variables, lists, dicts, list comprehensions, and JSON handling.
   - [ ] OOP: Classes, dataclasses, inheritance, and composition.
-  - *Resource:* [CodeWithHarry's 10-Hour Python Tutorial](https://youtu.be/UrsmFxEIp5k) (Covers core programming and OOP basics).
+  - *Resource:* [Telusko's Python Playlist](https://youtube.com/playlist?list=PLsyeobzWxl7omDoEYrrf3oXvXxa6MPgek&si=41-m0a2noeUKI08i) (Covers core programming and OOP basics).
   - *Resource:* [Corey Schafer's Python OOP Playlist](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhFcVMmqyqnTEx7) (Deep-dive into classes and inheritance).
 - [ ] **Asynchronous Programming in Python**
   - [ ] Understand `async`/`await`, `asyncio` task management, and `httpx` for async API calls.
@@ -18,7 +18,7 @@ This plan is customized to help you transition from **Frontend Developer** to a 
 - [ ] **Pydantic & FastAPI**
   - [ ] Pydantic validation schemas.
   - [ ] FastAPI endpoints (GET, POST), path/query parameters, and async route handlers.
-  - *Resource:* [Amigoscode - FastAPI Crash Course](https://youtu.be/GN6ICac3OXY) (Fast-paced, covers Pydantic and async endpoints).
+  - *Resource:* [Telusko's FastAPI Playlist](https://youtube.com/playlist?list=PLsyeobzWxl7qF4ASwCZZDXor_Y0YJ3Qfc&si=PJngboSdzjvDlk0Q) (Comprehensive FastAPI guide with Pydantic & SQLAlchemy).
 - [ ] **First Milestone Project**
   - [ ] Build a FastAPI service that calls a public API asynchronously using HTTPX, validates the response with Pydantic, and returns it.
 
